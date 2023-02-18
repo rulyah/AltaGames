@@ -32,8 +32,6 @@ namespace Level.States
 
         private void OnObstacleCollision(ObstacleView obstacle)
         {
-            core.model.bulletView.Reset();
-            core.factoryService.bullet.Release(core.model.bulletView);
             ChangeState(new FindCloserObstacleState(core, obstacle));
         }
 

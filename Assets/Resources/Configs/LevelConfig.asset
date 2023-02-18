@@ -16,7 +16,7 @@ MonoBehaviour:
   startPlayerPos: {x: 0, y: 2.5, z: -35}
   gatePos: {x: 0, y: 0, z: 32}
   spawnRadius: 25
-  playerSpeed: 10
   bulletSpeed: 20
   distanceToVictory: 10
   maxCurrentObstacleCount: 10
+  playerStartSize: {x: 5, y: 5, z: 5}

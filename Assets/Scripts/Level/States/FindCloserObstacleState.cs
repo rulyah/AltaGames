@@ -15,18 +15,22 @@ namespace Level.States
 
         public override void OnEnter()
         {
+            
             _obstacle.ChangeColor();
             _obstacle.isInfected = true;
-            
+
             for (var i = 0; i < core.model.currentObstacles.Count; i++)
             {
                 var distance = Vector3.Distance(_obstacle.transform.position,
                     core.model.currentObstacles[i].transform.position);
                 if (distance <= core.model.bulletView.transform.localScale.x * 2.0f)
                 {
+                    core.model.currentObstacles[i].isInfected = true;
                     core.model.currentObstacles[i].ChangeColor();
                 }
             }
+            core.model.bulletView.Reset();
+            core.factoryService.bullet.Release(core.model.bulletView);
             ChangeState(new DestroyObstacleState(core));
         }
     }
