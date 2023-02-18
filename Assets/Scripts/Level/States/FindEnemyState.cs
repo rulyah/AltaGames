@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 using Level.Views;
-using UnityEngine;
 using Utils.StateMachineTool;
 
 namespace Level.States
@@ -11,7 +10,6 @@ namespace Level.States
 
         public override void OnEnter()
         {
-            Debug.Log("FindEnemyState");
             core.model.currentObstacles ??= new List<ObstacleView>();
             core.model.currentObstacles.Clear();
             
@@ -25,7 +23,8 @@ namespace Level.States
                 {
                     core.model.currentObstacles.Add(obstacles[i]);
                 }
-                while (core.model.currentObstacles.Count > 1)//core.config.maxCurrentObstacleCount)
+                
+                while (core.model.currentObstacles.Count > core.config.maxCurrentObstacleCount)
                 {
                     var obstacle = core.model.currentObstacles[0];
                     core.model.obstacles.Remove(obstacle);
@@ -34,10 +33,6 @@ namespace Level.States
                 }
                 ChangeState(new InputState(core));
             }
-            /*else
-            {
-                ChangeState(new VictoryState(core));
-            }*/
         }
     }
 }

@@ -1,6 +1,5 @@
 using Level.Processes;
 using Level.Views;
-using UnityEngine;
 using Utils.StateMachineTool;
 
 namespace Level.States
@@ -20,7 +19,6 @@ namespace Level.States
 
         private void OnCameToTarget()
         {
-            //ChangeState(new DestroyGateState(core));
             core.factoryService.gate.Release(core.model.gateView);
         }
 
@@ -45,31 +43,5 @@ namespace Level.States
             core.factoryService.bullet.Release(core.model.bulletView);
             ChangeState(new VictoryState(core));
         }
-        
-        
-        /*public override void OnEnter()
-        {
-            Debug.Log("CheckBulletCollisionState");
-            core.model.bulletView.onObstacleCollision += OnObstacleCollision;
-            core.model.bulletView.onGateCollision += OnGateCollision;
-        }
-
-        private void OnGateCollision()
-        {
-            core.factoryService.bullet.Release(core.model.bulletView);
-            ChangeState(new FindEnemyState(core));
-        }
-
-        private void OnObstacleCollision(ObstacleView obstacle)
-        {
-            core.factoryService.bullet.Release(core.model.bulletView);
-            ChangeState(new FindCloserObstacleState(core, obstacle));
-        }
-
-        public override void OnExit()
-        {
-            core.model.bulletView.onObstacleCollision -= OnObstacleCollision;
-            core.model.bulletView.onGateCollision -= OnGateCollision;
-        }*/
     }
 }

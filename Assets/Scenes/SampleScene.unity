@@ -1306,6 +1306,14 @@ PrefabInstance:
       propertyPath: m_Alpha
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3564976210213744538, guid: d690e9adbfd86428e9ddfcd4d6689a57, type: 3}
+      propertyPath: m_Interactable
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3564976210213744538, guid: d690e9adbfd86428e9ddfcd4d6689a57, type: 3}
+      propertyPath: m_BlocksRaycasts
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3564976210311727509, guid: d690e9adbfd86428e9ddfcd4d6689a57, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0

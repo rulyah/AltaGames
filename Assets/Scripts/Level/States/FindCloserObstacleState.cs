@@ -15,8 +15,6 @@ namespace Level.States
 
         public override void OnEnter()
         {
-            Debug.Log("FindCloserObstacleState");
-            
             _obstacle.ChangeColor();
             _obstacle.isInfected = true;
             
@@ -24,7 +22,7 @@ namespace Level.States
             {
                 var distance = Vector3.Distance(_obstacle.transform.position,
                     core.model.currentObstacles[i].transform.position);
-                if (distance <= core.model.bulletView.transform.localScale.x)
+                if (distance <= core.model.bulletView.transform.localScale.x * 2.0f)
                 {
                     core.model.currentObstacles[i].ChangeColor();
                 }

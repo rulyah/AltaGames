@@ -5,13 +5,6 @@ namespace Level.Views
 {
     public class PlayerView : PoolableMonoBehaviour
     {
-        //private float _moveSpeed;
-
-        /*public void Move(float speed)
-        {
-            _moveSpeed = speed;
-        }*/
-
         public void ChangSize(float bulletSize)
         {
             transform.localScale -= new Vector3(bulletSize,bulletSize,bulletSize);

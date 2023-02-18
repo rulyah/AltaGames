@@ -24,7 +24,6 @@ namespace UI
 
         private void OnRestartClick()
         {
-            Debug.Log("restart");
             onRestart?.Invoke();
         }
     }

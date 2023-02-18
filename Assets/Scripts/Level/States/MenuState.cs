@@ -9,7 +9,6 @@ namespace Level.States
         
         public override void OnEnter()
         {
-            Debug.Log("MenuState");
             core.menuScreen.Show();
             core.menuScreen.onPlay += OnPlay;
             core.menuScreen.onClose += OnClose;

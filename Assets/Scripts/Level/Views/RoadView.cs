@@ -8,7 +8,7 @@ namespace Level.Views
         public void ChangeScale(float scaleX)
         {
             scaleX /= 10.0f;
-            transform.localScale = new Vector3(transform.localScale.x - scaleX, transform.localScale.y, transform.localScale.z);
+            transform.localScale = new Vector3(scaleX, transform.localScale.y, transform.localScale.z);
         }
     }
 }

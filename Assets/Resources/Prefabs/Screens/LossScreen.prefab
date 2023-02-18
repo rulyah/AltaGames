@@ -104,7 +104,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _canvasGroup: {fileID: 3564976210213744538}
-  _restartButton: {fileID: 3564976210623738090}
+  _restartButton: {fileID: 1437854183292896186}
 --- !u!1 &3564976210311727508
 GameObject:
   m_ObjectHideFlags: 0
@@ -274,7 +274,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 50
+  m_fontSize: 89.5
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -327,7 +327,7 @@ GameObject:
   - component: {fileID: 3564976210623738089}
   - component: {fileID: 3564976210623738092}
   - component: {fileID: 3564976210623738091}
-  - component: {fileID: 3564976210623738090}
+  - component: {fileID: 1437854183292896186}
   m_Layer: 5
   m_Name: RestartButton
   m_TagString: Untagged
@@ -394,7 +394,7 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &3564976210623738090
+--- !u!114 &1437854183292896186
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

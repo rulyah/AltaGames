@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 using Level.Views;
-using Utils.ProcessTool;
 
 namespace Level
 {
@@ -11,7 +10,6 @@ namespace Level
         public TargetView targetView;
         public BulletView bulletView;
         public GateView gateView;
-        public List<Process> processes;
         public List<ObstacleView> obstacles;
         public List<ObstacleView> currentObstacles;
     }

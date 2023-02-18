@@ -1,4 +1,3 @@
-using UnityEngine;
 using Utils.StateMachineTool;
 
 namespace Level.States
@@ -9,18 +8,9 @@ namespace Level.States
         
         public override void OnEnter()
         {
-            Debug.Log("ClearLevelState");
-            /*while(core.model.processes.Count > 0)
-            {
-                var process = core.model.processes[0];
-                process.Stop();
-                core.model.processes.Remove(process);
-            }*/
-
             core.factoryService.players.Release(core.model.playerView);
             core.factoryService.target.Release(core.model.targetView);
             core.factoryService.roads.Release(core.model.roadView);
-            //core.factoryService.bullet.Release(core.model.bulletView);
             
             while (core.model.obstacles.Count > 0)
             {

@@ -1,7 +1,6 @@
 using System.Collections.Generic;
 using Level.Views;
 using UnityEngine;
-using Utils.ProcessTool;
 using Utils.StateMachineTool;
 
 namespace Level.States
@@ -12,8 +11,6 @@ namespace Level.States
 
         public override void OnEnter()
         {
-            Debug.Log("PrepareLevelState");
-            core.model.processes ??= new List<Process>();
             core.model.obstacles ??= new List<ObstacleView>();
             SetPlayer();
             SetTarget();
@@ -26,6 +23,7 @@ namespace Level.States
         private void SetPlayer()
         {
             core.model.playerView = core.factoryService.players.Produce();
+            core.model.playerView.transform.localScale = core.config.playerStartSize;
             core.model.playerView.transform.position = core.config.startPlayerPos;
         }
 

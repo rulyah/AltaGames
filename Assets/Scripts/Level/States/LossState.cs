@@ -1,4 +1,3 @@
-using UnityEngine;
 using Utils.StateMachineTool;
 
 namespace Level.States
@@ -9,7 +8,6 @@ namespace Level.States
 
         public override void OnEnter()
         {
-            Debug.Log("LossState");
             core.lossScreen.Show();
             core.lossScreen.onRestart += OnRestart;
         }

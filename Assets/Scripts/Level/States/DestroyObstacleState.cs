@@ -11,19 +11,19 @@ namespace Level.States
 
         public override void OnEnter()
         {
-            Debug.Log("DestroyObstacleState");
-            
             core.StartCoroutine(Delay(1.0f, () =>
             {
                 foreach (var obstacle in core.model.currentObstacles.FindAll(n => n.isInfected))
                 {
                     core.model.obstacles.Remove(obstacle);
-                    obstacle.ChangeColor();
-                    obstacle.isInfected = false;
+                    obstacle.Reset();
                     core.factoryService.obstacle.Release(obstacle);
                 }
-                //ChangeState(new FindEnemyState(core));
-                if(core.model.playerView.transform.localScale.x <= 0.0f) ChangeState(new LossState(core));
+                if (core.model.playerView.transform.localScale.x <= 0.0f)
+                {
+                    core.gameScreen.Hide();
+                    ChangeState(new LossState(core));
+                }
                 else ChangeState(new InputState(core));
             }));
         }

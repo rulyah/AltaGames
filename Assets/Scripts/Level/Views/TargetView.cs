@@ -2,8 +2,5 @@ using Utils.FactoryTool;
 
 namespace Level.Views
 {
-    public class TargetView : PoolableMonoBehaviour
-    {
-        
-    }
+    public class TargetView : PoolableMonoBehaviour {}
 }
