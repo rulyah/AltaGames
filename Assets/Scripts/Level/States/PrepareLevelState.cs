@@ -17,7 +17,7 @@ namespace Level.States
             SetGate();
             SetRoad();
             SetObstacle();
-            ChangeState(new FindEnemyState(core));
+            ChangeState(new CorrectDifficultState(core));
         }
 
         private void SetPlayer()

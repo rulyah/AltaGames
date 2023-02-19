@@ -11,6 +11,7 @@ namespace Level.States
             core.factoryService.players.Release(core.model.playerView);
             core.factoryService.target.Release(core.model.targetView);
             core.factoryService.roads.Release(core.model.roadView);
+            core.factoryService.gate.Release(core.model.gateView);
             
             while (core.model.obstacles.Count > 0)
             {

@@ -20,6 +20,7 @@ namespace Level.States
         private void OnCameToTarget()
         {
             core.factoryService.gate.Release(core.model.gateView);
+            _moveProcess.Stop();
         }
 
         public override void OnExit()

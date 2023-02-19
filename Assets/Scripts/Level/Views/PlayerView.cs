@@ -5,7 +5,7 @@ namespace Level.Views
 {
     public class PlayerView : PoolableMonoBehaviour
     {
-        public void ChangSize(float bulletSize)
+        public void ChangeSize(float bulletSize)
         {
             transform.localScale -= new Vector3(bulletSize,bulletSize,bulletSize);
             ChangePosY(transform.localScale.y);
