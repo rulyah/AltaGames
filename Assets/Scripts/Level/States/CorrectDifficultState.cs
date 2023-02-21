@@ -14,8 +14,10 @@ namespace Level.States
             core.model.currentObstacles.Clear();
             
             var obstacles = core.model.obstacles.FindAll(n =>
-                n.transform.position.x < core.model.playerView.transform.localScale.x / 2.0f + 0.5f &&
-                n.transform.position.x > -core.model.playerView.transform.localScale.x / 2.0f - 0.5f);
+                n.transform.position.x < core.model.playerView.transform.localScale.x / 3.0f &&
+                n.transform.position.x > -core.model.playerView.transform.localScale.x / 3.0f);
+            //n.transform.position.x < core.model.playerView.transform.localScale.x / 2.0f + 0.5f &&
+                //n.transform.position.x > -core.model.playerView.transform.localScale.x / 2.0f - 0.5f);
             
             if(obstacles.Count > 0)
             {
@@ -32,6 +34,10 @@ namespace Level.States
                     core.factoryService.obstacle.Release(obstacle);
                 }
                 ChangeState(new InputState(core));
+            }
+            else
+            {
+                ChangeState(new MovePlayerState(core));
             }
         }
     }

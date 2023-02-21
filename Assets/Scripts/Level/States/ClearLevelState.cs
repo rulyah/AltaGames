@@ -9,9 +9,9 @@ namespace Level.States
         public override void OnEnter()
         {
             core.factoryService.players.Release(core.model.playerView);
-            core.factoryService.target.Release(core.model.targetView);
+            core.factoryService.target.Release(core.model.portalView);
             core.factoryService.roads.Release(core.model.roadView);
-            core.factoryService.gate.Release(core.model.gateView);
+            core.factoryService.singularity.Release(core.model.singularityView);
             
             while (core.model.obstacles.Count > 0)
             {

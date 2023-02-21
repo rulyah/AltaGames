@@ -18,6 +18,7 @@ namespace Level.Processes
             _core = core;
             _player = _core.model.playerView;
             _bullet = _core.factoryService.bullet.Produce();
+            _bullet.transform.localScale = Vector3.zero;
             _core.model.bulletView = _bullet;
             _playerScale = _player.transform.localScale.x;
         }
@@ -33,12 +34,11 @@ namespace Level.Processes
                 };
                 
                 var scale = Time.deltaTime;
-                _bullet.transform.localScale += new Vector3(scale, scale, scale);
-                _bullet.transform.position = new Vector3(_player.transform.position.x, _bullet.transform.localScale.y / 2.0f,
+                _bullet.ChangeSize(scale);
+                _bullet.transform.position = new Vector3(_player.transform.position.x, 0.0f,
                     _player.transform.position.z + _playerScale / 2.0f);
                 _player.ChangeSize(scale);
                 _core.model.roadView.ChangeScale(_player.transform.localScale.x);
-                
             }
             if (Input.GetMouseButtonUp(0))
             {

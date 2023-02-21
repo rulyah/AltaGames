@@ -1,5 +1,6 @@
 using Level.Processes;
 using Level.Views;
+using UnityEngine;
 using Utils.StateMachineTool;
 
 namespace Level.States
@@ -12,14 +13,17 @@ namespace Level.States
         {
             core.model.bulletView.onObstacleCollision += OnObstacleCollision;
             core.model.bulletView.onTargetCollision += OnTargetCollision;
-            _moveProcess = new MoveProcess(core);
+            _moveProcess = new MoveProcess(core, core.model.bulletView);
             _moveProcess.Start();
             _moveProcess.onCameToTarget += OnCameToTarget;
         }
 
         private void OnCameToTarget()
         {
-            core.factoryService.gate.Release(core.model.gateView);
+            //core.factoryService.gate.Release(core.model.gateView);
+            core.model.portalView.SwitchPortal();
+            core.model.singularityView.gameObject.SetActive(true);
+            core.model.singularityView.isActivate = true;
             _moveProcess.Stop();
         }
 
@@ -33,12 +37,13 @@ namespace Level.States
 
         private void OnObstacleCollision(ObstacleView obstacle)
         {
-            ChangeState(new FindCloserObstacleState(core, obstacle));
+            core.model.currentObstacles.Remove(obstacle);
+            ChangeState(new DestroyCloserObstacleState(core, obstacle));
         }
 
         private void OnTargetCollision()
         {
-            core.model.bulletView.Reset();
+            core.model.bulletView.Refresh();
             core.factoryService.bullet.Release(core.model.bulletView);
             ChangeState(new VictoryState(core));
         }

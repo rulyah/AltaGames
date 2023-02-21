@@ -14,7 +14,7 @@ namespace Level.States
             core.model.obstacles ??= new List<ObstacleView>();
             SetPlayer();
             SetTarget();
-            SetGate();
+            SetSingularity();
             SetRoad();
             SetObstacle();
             ChangeState(new CorrectDifficultState(core));
@@ -29,14 +29,14 @@ namespace Level.States
 
         private void SetTarget()
         {
-            core.model.targetView = core.factoryService.target.Produce();
-            core.model.targetView.transform.position = core.config.startTargetPos;
+            core.model.portalView = core.factoryService.target.Produce();
+            core.model.portalView.transform.position = core.config.startTargetPos;
         }
 
         private void SetRoad()
         {
             var distance = Vector3.Distance(core.model.playerView.transform.position,
-                core.model.targetView.transform.position);
+                core.model.portalView.transform.position);
             
             core.model.roadView = core.factoryService.roads.Produce();
             core.model.roadView.transform.position = Vector3.zero;
@@ -58,11 +58,13 @@ namespace Level.States
                 core.model.obstacles.Add(obstacle);
             }
         }
-
-        private void SetGate()
+        
+        private void SetSingularity()
         {
-            core.model.gateView = core.factoryService.gate.Produce();
-            core.model.gateView.transform.position = core.config.gatePos;
+            core.model.singularityView = core.factoryService.singularity.Produce();
+            core.model.singularityView.gameObject.SetActive(false);
+            core.model.singularityView.transform.position = 
+                new Vector3(core.model.portalView.transform.position.x, 3.5f, core.model.portalView.transform.position.z);
         }
     }
 }

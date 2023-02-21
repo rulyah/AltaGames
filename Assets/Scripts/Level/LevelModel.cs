@@ -7,9 +7,10 @@ namespace Level
     {
         public PlayerView playerView;
         public RoadView roadView;
-        public TargetView targetView;
+        public PortalView portalView;
         public BulletView bulletView;
-        public GateView gateView;
+        public SingularityView singularityView;
+        public ExplosionView explosionView;
         public List<ObstacleView> obstacles;
         public List<ObstacleView> currentObstacles;
     }

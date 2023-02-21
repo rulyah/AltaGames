@@ -13,10 +13,9 @@ MonoBehaviour:
   m_Name: LevelConfig
   m_EditorClassIdentifier: 
   startTargetPos: {x: 0, y: 0, z: 35}
-  startPlayerPos: {x: 0, y: 2.5, z: -35}
-  gatePos: {x: 0, y: 0, z: 32}
+  startPlayerPos: {x: 0, y: 0, z: -35}
   spawnRadius: 25
   bulletSpeed: 20
-  distanceToVictory: 10
+  distanceToVictory: 40
   maxCurrentObstacleCount: 10
   playerStartSize: {x: 5, y: 5, z: 5}

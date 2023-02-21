@@ -8,17 +8,20 @@ namespace Services.Factory
     {
         [SerializeField] private PlayerView _playerPrefab;
         [SerializeField] private RoadView _roadPrefab;
-        [SerializeField] private TargetView _targetPrefab;
+        [SerializeField] private PortalView portalPrefab;
         [SerializeField] private ObstacleView _obstaclePrefab;
         [SerializeField] private BulletView _bulletPrefab;
-        [SerializeField] private GateView _gatePrefab;
+        [SerializeField] private SingularityView _singularityPrefab;
+        [SerializeField] private ExplosionView _explosionPrefab;
+
         
         public Factory<PlayerView> players { get; private set; }
         public Factory<RoadView> roads { get; private set; }
-        public Factory<TargetView> target { get; private set; }
+        public Factory<PortalView> target { get; private set; }
         public Factory<ObstacleView> obstacle { get; private set; }
         public Factory<BulletView> bullet { get; private set; }
-        public Factory<GateView> gate { get; private set; }
+        public Factory<SingularityView> singularity { get; private set; }
+        public Factory<ExplosionView> explosion { get; private set; }
 
 
 
@@ -27,10 +30,11 @@ namespace Services.Factory
         {
             players = new Factory<PlayerView>(_playerPrefab, 1);
             roads = new Factory<RoadView>(_roadPrefab, 1);
-            target = new Factory<TargetView>(_targetPrefab, 1);
-            gate = new Factory<GateView>(_gatePrefab, 1);
+            target = new Factory<PortalView>(portalPrefab, 1);
             obstacle = new Factory<ObstacleView>(_obstaclePrefab, 200);
             bullet = new Factory<BulletView>(_bulletPrefab, 1);
+            singularity = new Factory<SingularityView>(_singularityPrefab, 1);
+            explosion = new Factory<ExplosionView>(_explosionPrefab, 1);
         }
 
         private void OnDestroy()

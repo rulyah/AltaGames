@@ -18,7 +18,7 @@ namespace Level.States
         private void OnFire()
         {
             var bullet = core.model.bulletView;
-            bullet.Move(core.config.bulletSpeed);
+            bullet.PlayMove(core.config.bulletSpeed);
             ChangeState(new CheckBulletCollisionState(core));
         }
 
