@@ -26,7 +26,6 @@ namespace Level.States
                 {
                     for (var i = 0; i < core.model.currentObstacles.Count; i++)
                     {
-                        Debug.Log(core.model.currentObstacles.Count);
                         var distance = Vector3.Distance(_obstacle.transform.position,
                             core.model.currentObstacles[i].transform.position);
 
@@ -36,6 +35,7 @@ namespace Level.States
                             core.model.currentObstacles.Remove(obstacle);
                             core.factoryService.obstacle.Release(obstacle);
                         }
+                        Debug.Log(core.model.currentObstacles.Count);
                     }
                     
                     core.model.bulletView.Refresh();
@@ -50,7 +50,12 @@ namespace Level.States
                     }
                     else ChangeState(new CorrectDifficultState(core));
                 }
-                else ChangeState(new MovePlayerState(core));
+                else
+                {
+                    core.model.bulletView.Refresh();
+                    core.factoryService.bullet.Release(core.model.bulletView);
+                    ChangeState(new MovePlayerState(core));
+                }
             }));
         }
 

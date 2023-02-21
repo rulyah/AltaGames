@@ -11,6 +11,7 @@ namespace Level
         public float bulletSpeed = 20.0f;
         public float distanceToVictory = 10.0f;
         public int maxCurrentObstacleCount = 10;
+        public float minSize = 0.5f;
         public Vector3 playerStartSize;
     }
 }

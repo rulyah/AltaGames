@@ -1,6 +1,5 @@
 using Level.Processes;
 using Level.Views;
-using UnityEngine;
 using Utils.StateMachineTool;
 
 namespace Level.States
@@ -20,7 +19,6 @@ namespace Level.States
 
         private void OnCameToTarget()
         {
-            //core.factoryService.gate.Release(core.model.gateView);
             core.model.portalView.SwitchPortal();
             core.model.singularityView.gameObject.SetActive(true);
             core.model.singularityView.isActivate = true;

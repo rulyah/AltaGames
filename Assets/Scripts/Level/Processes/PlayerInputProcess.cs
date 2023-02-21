@@ -36,7 +36,7 @@ namespace Level.Processes
                 var scale = Time.deltaTime;
                 _bullet.ChangeSize(scale);
                 _bullet.transform.position = new Vector3(_player.transform.position.x, 0.0f,
-                    _player.transform.position.z + _playerScale / 2.0f);
+                    _player.transform.position.z + _playerScale * 2.0f);
                 _player.ChangeSize(scale);
                 _core.model.roadView.ChangeScale(_player.transform.localScale.x);
             }

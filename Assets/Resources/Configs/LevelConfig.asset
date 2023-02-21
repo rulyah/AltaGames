@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startTargetPos: {x: 0, y: 0, z: 35}
   startPlayerPos: {x: 0, y: 0, z: -35}
-  spawnRadius: 25
+  spawnRadius: 20
   bulletSpeed: 20
   distanceToVictory: 40
   maxCurrentObstacleCount: 10

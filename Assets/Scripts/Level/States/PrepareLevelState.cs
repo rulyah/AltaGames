@@ -64,7 +64,7 @@ namespace Level.States
             core.model.singularityView = core.factoryService.singularity.Produce();
             core.model.singularityView.gameObject.SetActive(false);
             core.model.singularityView.transform.position = 
-                new Vector3(core.model.portalView.transform.position.x, 3.5f, core.model.portalView.transform.position.z);
+                new Vector3(core.model.portalView.transform.position.x, 5.0f, core.model.portalView.transform.position.z);
         }
     }
 }
